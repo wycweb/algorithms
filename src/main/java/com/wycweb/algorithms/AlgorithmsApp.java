@@ -6,8 +6,14 @@ import com.wycweb.algorithms.sort.Student;
 
 public class AlgorithmsApp {
 
+    // 测试排序算法辅助函数
+    private static Integer[] arr = SortTestHelper.generateRandomArray(100000, 0, 100000);
+
     public static void main(String[] args) {
-        AlgorithmsApp.selection();  //选择排序 时间复杂度读 O(N方)
+        AlgorithmsApp.selection();  //选择排序 时间复杂度 O(n^2)
+        AlgorithmsApp.insertion();  //插入排序 时间复杂度 O(n^2)
+        AlgorithmsApp.pop();
+        AlgorithmsApp.merge();
     }
 
     private static void selection() {
@@ -21,10 +27,18 @@ public class AlgorithmsApp {
         for (int i = 0; i < d.length; i++)
             System.out.println(d[i]);
 
-
-        // 测试排序算法辅助函数
-        int N = 20000;
-        Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
         SortTestHelper.testSort("com.wycweb.algorithms.sort.SelectionSort", arr);
+    }
+
+    private static void insertion() {
+        SortTestHelper.testSort("com.wycweb.algorithms.sort.InsertionSort", arr);
+    }
+
+    private static void pop() {
+        SortTestHelper.testSort("com.wycweb.algorithms.sort.BubbleSort", arr, true);
+    }
+
+    private static void merge() {
+        SortTestHelper.testSort("com.wycweb.algorithms.sort.MergeSort", arr);
     }
 }

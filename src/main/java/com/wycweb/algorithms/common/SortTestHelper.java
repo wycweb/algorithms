@@ -25,8 +25,6 @@ public class SortTestHelper {
             System.out.print(' ');
         }
         System.out.println();
-
-        return;
     }
 
     // 判断arr数组是否有序
@@ -60,6 +58,27 @@ public class SortTestHelper {
             System.out.println(sortClass.getSimpleName() + " : " + (endTime - startTime) + "ms");
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * 测试sortClassName所对应的排序算法排序arr数组所得到结果的正确性和算法运行时间
+     * @param isPrintArray 是否打印数组，true打印，false不打印
+     */
+    public static void testSort(String sortClassName, Comparable[] arr, Boolean isPrintArray) {
+
+        if (isPrintArray) {
+
+            System.out.print("处理前的结果:");
+            printArray(arr);
+
+            testSort(sortClassName, arr);
+
+            System.out.print("处理后的结果:");
+            printArray(arr);
+
+        } else {
+            testSort(sortClassName, arr);
         }
     }
 }
