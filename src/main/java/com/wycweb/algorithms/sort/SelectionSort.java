@@ -20,15 +20,15 @@ public class SelectionSort {
                     minIndex = j;
                 }
             }
-            swap(arr, i, minIndex);
+
+            swap(arr,minIndex,i);
         }
     }
 
     private static void swap(Object[] arr, int i, int j) {
         Object m = arr[i];
-        Object n = arr[j];
 
-        arr[i] = n;
+        arr[i] = arr[j];
         arr[j] = m;
     }
 }
