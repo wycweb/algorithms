@@ -1,6 +1,4 @@
-package com.wycweb.algorithms.sort;
-
-import com.wycweb.algorithms.common.SortTestHelper;
+package com.wangyichao.algorithms.sort;
 
 /**
  * 插入排序

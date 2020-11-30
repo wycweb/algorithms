@@ -1,4 +1,4 @@
-package com.wycweb.algorithms.common;
+package com.wangyichao.algorithms.common;
 
 import java.lang.reflect.Method;
 

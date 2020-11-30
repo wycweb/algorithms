@@ -1,8 +1,8 @@
-package com.wycweb.algorithms;
+package com.wangyichao.algorithms;
 
-import com.wycweb.algorithms.common.SortTestHelper;
-import com.wycweb.algorithms.sort.SelectionSort;
-import com.wycweb.algorithms.sort.Student;
+import com.wangyichao.algorithms.common.SortTestHelper;
+import com.wangyichao.algorithms.sort.Student;
+import com.wangyichao.algorithms.sort.SelectionSort;
 
 public class AlgorithmsApp {
 
@@ -27,18 +27,18 @@ public class AlgorithmsApp {
         for (int i = 0; i < d.length; i++)
             System.out.println(d[i]);
 
-        SortTestHelper.testSort("com.wycweb.algorithms.sort.SelectionSort", arr);
+        SortTestHelper.testSort("com.wangyichao.algorithms.sort.SelectionSort", arr);
     }
 
     private static void insertion() {
-        SortTestHelper.testSort("com.wycweb.algorithms.sort.InsertionSort", arr);
+        SortTestHelper.testSort("com.wangyichao.algorithms.sort.InsertionSort", arr);
     }
 
     private static void pop() {
-        SortTestHelper.testSort("com.wycweb.algorithms.sort.BubbleSort", arr, true);
+        SortTestHelper.testSort("com.wangyichao.algorithms.sort.BubbleSort", arr, true);
     }
 
     private static void merge() {
-        SortTestHelper.testSort("com.wycweb.algorithms.sort.MergeSort", arr);
+        SortTestHelper.testSort("com.wangyichao.algorithms.sort.MergeSort", arr);
     }
 }

@@ -1,4 +1,4 @@
-package com.wycweb.algorithms.sort;
+package com.wangyichao.algorithms.sort;
 
 /**
  * 选择排序

@@ -1,6 +1,6 @@
-package com.wycweb.algorithms.sort;
+package com.wangyichao.algorithms.sort;
 
-import com.wycweb.algorithms.common.SortTestHelper;
+import com.wangyichao.algorithms.common.SortTestHelper;
 
 public class BubbleSort {
 
@@ -8,7 +8,7 @@ public class BubbleSort {
 
         Integer[] arr = SortTestHelper.generateRandomArray(5, 0, 10);
 
-        SortTestHelper.testSort("com.wycweb.algorithms.sort.PopSort", arr, true);
+        SortTestHelper.testSort("com.wangyichao.algorithms.sort.PopSort", arr, true);
     }
 
     public static void sort(Comparable[] arr) {

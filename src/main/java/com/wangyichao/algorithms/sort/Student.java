@@ -1,4 +1,4 @@
-package com.wycweb.algorithms.sort;
+package com.wangyichao.algorithms.sort;
 
 public class Student implements Comparable<Student> {
 
