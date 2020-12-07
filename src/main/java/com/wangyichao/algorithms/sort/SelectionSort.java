@@ -1,36 +1,57 @@
 package com.wangyichao.algorithms.sort;
 
-/**
- * 选择排序
- * 时间复杂度：O(n^2)
- * 从第一个位置开始，在整个数据集中找比第一个位置最小的元素，找到之后放在第一个位置
- * 第一个位置处理完成后，在从第二个位置开始找最小的元素，放在第一个位置
- * 以此类推
- */
+import com.wangyichao.algorithms.bean.Student;
+import com.wangyichao.algorithms.utils.ArrayGenerator;
+import com.wangyichao.algorithms.utils.SortingHelper;
+
 public class SelectionSort {
 
-    public static void sort(Comparable[] arr) {
-        int length = arr.length;
+    public static <E extends Comparable<E>> void sort(E[] data) {
 
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < data.length; i++) {
+            // 最小值的索引
             int minIndex = i;
 
-            for (int j = minIndex + 1; j < length; j++) {
-                if (arr[j].compareTo(arr[minIndex]) < 0 ) {
+            for (int j = i; j < data.length; j++) {
+                if (data[j].compareTo(data[minIndex]) < 0) {
                     minIndex = j;
                 }
             }
 
-            swap(arr,minIndex,i);
+            swap(data, i, minIndex);
         }
+
     }
 
-    private static void swap(Object[] arr, int i, int j) {
-        Object m = arr[i];
+    public static <E> void swap(E[] data, int i, int j) {
+        E tmp = data[i];
 
-        arr[i] = arr[j];
-        arr[j] = m;
+        data[i] = data[j];
+        data[j] = tmp;
+    }
+
+    public static void main(String[] args) {
+
+        Integer[] data = {10000, 100000};
+
+        Student[] students = {
+                new Student("a", 10),
+                new Student("b", 8),
+                new Student("c", 5),
+        };
+
+        SelectionSort.sort(students);
+
+        for (Student student : students) {
+            System.out.println(student);
+        }
+
+
+        for (int n : data) {
+            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
+
+            SortingHelper.sortTest("SelectionSort", arr);
+        }
+
     }
 }
-
-

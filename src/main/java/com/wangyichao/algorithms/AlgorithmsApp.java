@@ -1,19 +1,17 @@
 package com.wangyichao.algorithms;
 
-import com.wangyichao.algorithms.common.SortTestHelper;
-import com.wangyichao.algorithms.sort.Student;
+import com.wangyichao.algorithms.bean.Student;
 import com.wangyichao.algorithms.sort.SelectionSort;
+import com.wangyichao.algorithms.utils.ArrayGenerator;
+import com.wangyichao.algorithms.utils.SortingHelper;
 
 public class AlgorithmsApp {
 
     // 测试排序算法辅助函数
-    private static Integer[] arr = SortTestHelper.generateRandomArray(100000, 0, 100000);
+    private static Integer[] arr = ArrayGenerator.generateRandomArray(100000, 100000);
 
     public static void main(String[] args) {
-        AlgorithmsApp.selection();  //选择排序 时间复杂度 O(n^2)
-        AlgorithmsApp.insertion();  //插入排序 时间复杂度 O(n^2)
-        AlgorithmsApp.pop();
-        AlgorithmsApp.merge();
+        selection();
     }
 
     private static void selection() {
@@ -27,18 +25,7 @@ public class AlgorithmsApp {
         for (int i = 0; i < d.length; i++)
             System.out.println(d[i]);
 
-        SortTestHelper.testSort("com.wangyichao.algorithms.sort.SelectionSort", arr);
+        SortingHelper.sortTest("SelectionSort", arr);
     }
 
-    private static void insertion() {
-        SortTestHelper.testSort("com.wangyichao.algorithms.sort.InsertionSort", arr);
-    }
-
-    private static void pop() {
-        SortTestHelper.testSort("com.wangyichao.algorithms.sort.BubbleSort", arr, true);
-    }
-
-    private static void merge() {
-        SortTestHelper.testSort("com.wangyichao.algorithms.sort.MergeSort", arr);
-    }
 }
