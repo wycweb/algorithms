@@ -1,7 +1,5 @@
 package com.wangyichao.algorithms.sort;
 
-import com.wangyichao.algorithms.bean.Student;
-import com.wangyichao.algorithms.utils.ArrayGenerator;
 import com.wangyichao.algorithms.utils.SortingHelper;
 
 public class SelectionSort {
@@ -18,40 +16,25 @@ public class SelectionSort {
                 }
             }
 
-            swap(data, i, minIndex);
+            SortingHelper.swap(data, i, minIndex);
         }
 
     }
 
-    public static <E> void swap(E[] data, int i, int j) {
-        E tmp = data[i];
 
-        data[i] = data[j];
-        data[j] = tmp;
+    public static <E extends Comparable<E>> void sort2(E[] data) {
+
+        for (int i = data.length - 1; i >= 0; i--) {
+            int maxIndex = i;
+
+            for (int j = i; j >= 0; j--) {
+                if (data[j].compareTo(data[maxIndex]) > 0) {
+                    maxIndex = j;
+                }
+            }
+
+            SortingHelper.swap(data, i, maxIndex);
+        }
     }
 
-    public static void main(String[] args) {
-
-        Integer[] data = {10000, 100000};
-
-        Student[] students = {
-                new Student("a", 10),
-                new Student("b", 8),
-                new Student("c", 5),
-        };
-
-        SelectionSort.sort(students);
-
-        for (Student student : students) {
-            System.out.println(student);
-        }
-
-
-        for (int n : data) {
-            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
-
-            SortingHelper.sortTest("SelectionSort", arr);
-        }
-
-    }
 }

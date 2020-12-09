@@ -5,13 +5,16 @@ import com.wangyichao.algorithms.sort.SelectionSort;
 import com.wangyichao.algorithms.utils.ArrayGenerator;
 import com.wangyichao.algorithms.utils.SortingHelper;
 
+import java.util.Arrays;
+
 public class AlgorithmsApp {
 
     // 测试排序算法辅助函数
     private static Integer[] arr = ArrayGenerator.generateRandomArray(100000, 100000);
 
     public static void main(String[] args) {
-        selection();
+//        selection();
+        insert();
     }
 
     private static void selection() {
@@ -26,6 +29,13 @@ public class AlgorithmsApp {
             System.out.println(d[i]);
 
         SortingHelper.sortTest("SelectionSort", arr);
+    }
+
+    public static void insert() {
+        Integer[] arr2 = Arrays.copyOf(arr, arr.length);
+
+//        SortingHelper.sortTest("InsertionSort", arr);
+        SortingHelper.sortTest("InsertionSort", "sort3", arr2);
     }
 
 }

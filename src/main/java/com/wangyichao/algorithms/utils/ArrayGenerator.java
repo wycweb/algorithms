@@ -33,7 +33,7 @@ public class ArrayGenerator {
     public static Integer[] generateRandomArray(int n, int bound) {
         Integer[] arr = new Integer[n];
 
-        Random random = new Random();
+        Random random = new Random(1);
 
         for (int i = 0; i < n; i++) {
             arr[i] = random.nextInt(bound);
